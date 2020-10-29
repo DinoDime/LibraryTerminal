@@ -1,7 +1,24 @@
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+
 public class Midterm {
 
+	private static Path filePath = Paths.get("BookList.txt");
+	
 	public static void main(String[] args) {
+		
+		System.out.println(readFile());
+		
+	
 		System.out.println("Welcome to the Library index");
 //		SysO ask for list or search or return
 //		generate options		
@@ -27,3 +44,31 @@ public class Midterm {
 //	
 //			
 //
+	
+
+		//method 1 list all books 
+
+	public static List<Book> readFile() {
+		try {
+			List<String> lines = Files.readAllLines(filePath);
+			List<Book> things = new ArrayList<>();
+						
+			for (String line : lines) {
+				String[] parts = line.split("~");
+				String title = parts[0];
+				String dueDate = parts[1];
+				String author = parts[2];
+				things.add(new Book(title,dueDate,author));
+			}
+			
+			return things;
+			
+		} catch (IOException e) {
+			System.out.println("Unable to read file.");
+			return new ArrayList<>();
+		}
+	}
+	
+		
+
+}
