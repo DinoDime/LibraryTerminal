@@ -3,23 +3,29 @@ import java.util.*;
 
 public class Book extends Media {
 
-	private List<String> author;
+	private String author;
 
 	public Book() {
 		
 	}
 	
-	public Book(List<String> author) {
-		super();
+	public Book(String title, String dueDate, String author) {
+		super(title, dueDate);
 		this.author = author;
 	}
 
-	public List<String> getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(List<String> author) {
+	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Title: " + getTitle() + "Author: " + author;
 	}
 
 	@Override
@@ -27,6 +33,11 @@ public class Book extends Media {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	
+	
 	
 		
 }
