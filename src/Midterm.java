@@ -50,9 +50,9 @@ public class Midterm {
 			for (String line : lines) {
 				String[] parts = line.split("~");
 				String title = parts[0];
-				String dueDate = parts[1];
+				boolean status = parts[1];
 				String author = parts[2];
-				things.add(new Book(title,dueDate,author));
+				things.add(new Book(title,status,author));
 			}			
 			return things;			
 		} catch (IOException e) {
@@ -65,7 +65,7 @@ public class Midterm {
 		for(Book book : bookslist) {
 			if(book.getTitle().contains(searchId)) {
 				System.out.println(book.toString());	
-			}else if(book.getAuthor().equals(searchId)) {
+			}else if(book.getAuthor().contains(searchId)) {
 				System.out.println(book.toString());
 			}
 		}

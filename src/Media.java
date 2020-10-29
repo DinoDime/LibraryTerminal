@@ -3,15 +3,15 @@
 public abstract class Media {
 
 	private String title;
-	private String dueDate;
+	private boolean status;
 	
 	public Media() {
 		
 	}
 	
-	public Media(String title, String dueDate) {
+	public Media(String title, boolean status) {
 		this.title = title;
-		this.dueDate = dueDate;
+		this.status = status;
 	}
 	
 	public abstract Status displayStatus();
@@ -24,17 +24,17 @@ public abstract class Media {
 		this.title = title;
 	}
 
-	public String getDueDate() {
-		return dueDate;
+	public boolean getStatus() {
+		return status;
 	}
 
-	public void setDueDate(String dueDate) {
-		this.dueDate = dueDate;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
-		return "Media [title=" + title + ", dueDate=" + dueDate + "]";
+		return "Media [title=" + title + ", status=" + status + "]";
 	}	
 
 }

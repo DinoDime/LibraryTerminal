@@ -1,12 +1,12 @@
-Real Life~fourteen days~Brandon Taylor
-Divergent~fourteen days~Veronica Roth
-Educated~fourteen days~Tara Westover
-Black Enough~fourteen days~Ibi Zoboi
-Ninth House~fourteen days~Leigh Bardugo
-Such a Fun Age~fourteen days~Kiley Reid
-The Hate U Give~fourteen days~Angie Thomas
-The Book of M~fourteen days~Peng Sheperd
-Homegoing~fourteen days~Yaa Gyasi
-Sleeping Giants~fourteen days~Sylvian Neuvel
-The Sun and Her Flowers~fourteen days~Rupi Kaur
-Six Wakes~fourteen days~Mur Lafferty
+Real Life~true~Brandon Taylor
+Divergent~true~Veronica Roth
+Educated~true~Tara Westover
+Black Enough~true~Ibi Zoboi
+Ninth House~true~Leigh Bardugo
+Such a Fun Age~true~Kiley Reid
+The Hate U Give~true~Angie Thomas
+The Book of M~true~Peng Sheperd
+Homegoing~true~Yaa Gyasi
+Sleeping Giants~true~Sylvian Neuvel
+The Sun and Her Flowers~true~Rupi Kaur
+Six Wakes~true~Mur Lafferty

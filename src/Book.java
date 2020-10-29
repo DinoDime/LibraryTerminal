@@ -9,9 +9,9 @@ public class Book extends Media {
 		
 	}
 	
-	public Book(String title, String dueDate, String author) {
+	public Book(String title, boolean status, String author) {
 
-		super(title, dueDate);
+		super(author, status);
 		this.author = author;
 	}
 
