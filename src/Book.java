@@ -10,7 +10,7 @@ public class Book extends Media {
 	}
 	
 	public Book(String title, String dueDate, String author) {
-		super();
+		super(title, dueDate);
 		this.author = author;
 	}
 
@@ -22,16 +22,19 @@ public class Book extends Media {
 		this.author = author;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Title: " + getTitle() + "Author: " + author;
+	}
+
 	@Override
 	public Status displayStatus() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [author=" + author + "]";
-	}
+	
 
 	
 	

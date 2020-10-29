@@ -10,7 +10,6 @@ public abstract class Media {
 	}
 	
 	public Media(String title, String dueDate) {
-		super();
 		this.title = title;
 		this.dueDate = dueDate;
 	}
