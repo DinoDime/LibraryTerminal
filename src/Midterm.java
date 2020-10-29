@@ -9,7 +9,7 @@ public class Midterm {
 				+ "");
 		System.out.println("After this fight, the monkeys chose peace and freedom.");
 		System.out.println("And the monkeys retired, and decided to form a band.");
-
+		System.out.println("They called themselves The Magical Monks!!");
 	}
 
 }
