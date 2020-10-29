@@ -1,13 +1,11 @@
 import java.util.*;
 
 public class returnBooks {
-	public static void main(String[] args) {
-		Map<String,String> bookStatus=new HashMap<String,String>();  
-		String myBook = "The Little Engine That Could";
-		String status = "checked out";
-		bookCheckOut(myBook, status);
-		bookReturn(myBook, status);
-		bookStatus.put(myBook, status);
+	public static void returnCheckOut(String book, boolean status) {
+		book = "The Little Engine That Could";
+		status = true;
+		bookCheckOut(book, status);
+		bookReturn(book, status);
 		
 		}
 	public static void dueDate() {
@@ -27,28 +25,27 @@ public class returnBooks {
 	    // print out tomorrow's date
 	    System.out.println("Your due date is " + dueDate + ".");
 	}
-	public static void bookCheckOut(String book, String status) {
+	public static void bookCheckOut(String book, boolean status) {
 		Scanner JavaInput = new Scanner(System.in);
-		if (status.equals("on shelf")) {
+		if (status == true) {
 			System.out.println("Are you checking out " + book + " today?");
 			String userResponse = JavaInput.nextLine();
 			if (userResponse.contains("y")) {
-				status = "checked out";
+				status = false;
 				dueDate();
 		}
 		}
 	}
-	public static void bookReturn(String book, String status) {
+	public static void bookReturn(String book, boolean status) {
 		Scanner JavaInput = new Scanner(System.in);
-		if (status.equals("checked out")) {
+		if (status == false) {
 			System.out.println("Are you returning " + book + " today?");
 			String userResponse = JavaInput.nextLine();
 			if (userResponse.contains("y")) {
-				status = "on shelf";
+				status = true;
 				System.out.println("Thank you for returning " + book + " today!");
 	
 	}
 		}
 	}
 }
-
