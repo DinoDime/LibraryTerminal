@@ -35,5 +35,5 @@ public abstract class Media {
 		this.dueDate = dueDate;
 	}
 	
-		
+	
 }
