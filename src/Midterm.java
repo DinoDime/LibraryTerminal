@@ -7,6 +7,7 @@ public class Midterm {
 		System.out.println("and their natural magical prowess. Once they were challenged by a swarm of seemingly unstoppable Shawlin battle bugs, but with their "
 				+ "magical powers they paired up and mowed down their foes. One-by-one every last pesky bug fell at the quick hands of the monkeys.\r\n"
 				+ "");
+		System.out.println("After this fight, the monkeys chose peace and freedom.");
 	}
 
 }
