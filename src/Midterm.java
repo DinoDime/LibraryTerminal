@@ -11,7 +11,6 @@ public class Midterm {
 						+ "");
 		System.out.println("After this fight, the students chose peace and freedom.");
 		System.out.println("And the students retired, and decided to form a band.");
-		System.out.println("They called themselves The Magical Monks!!");
+		System.out.println("They called themselves The Magical Peeps!!");
 	}
-
 }
