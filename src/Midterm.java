@@ -25,6 +25,7 @@ public class Midterm {
 	
 		System.out.println("Welcome to the Library index");
 		searchFunction(things,"Taylor");
+		returnBooks.main(args);
 //		SysO ask for list or search or return
 //		generate options		
 //			1 2 3	
@@ -50,7 +51,7 @@ public class Midterm {
 			for (String line : lines) {
 				String[] parts = line.split("~");
 				String title = parts[0];
-				boolean status = parts[1];
+				boolean status = Boolean.parseBoolean(parts[1]);
 				String author = parts[2];
 				things.add(new Book(title,status,author));
 			}			
