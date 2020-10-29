@@ -3,21 +3,19 @@
 public abstract class Media {
 
 	private String title;
-	private int dueDate;
-	
-	
+	private String dueDate;
 	
 	public Media() {
 		
 	}
 	
-	public Media(String title, int dueDate) {
+	public Media(String title, String dueDate) {
 		super();
 		this.title = title;
 		this.dueDate = dueDate;
 	}
 	
-	public abstract Status displayStatus();	
+	public abstract Status displayStatus();
 
 	public String getTitle() {
 		return title;
@@ -27,13 +25,18 @@ public abstract class Media {
 		this.title = title;
 	}
 
-	public int getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate(int dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Media [title=" + title + ", dueDate=" + dueDate + "]";
+	}	
+
 }
+
