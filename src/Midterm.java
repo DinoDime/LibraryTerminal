@@ -8,6 +8,8 @@ public class Midterm {
 				+ "magical powers they paired up and mowed down their foes. One-by-one every last pesky bug fell at the quick hands of the monkeys.\r\n"
 				+ "");
 		System.out.println("After this fight, the monkeys chose peace and freedom.");
+		System.out.println("And the monkeys retired, and decided to form a band.");
+
 	}
 
 }
