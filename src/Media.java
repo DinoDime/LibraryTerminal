@@ -38,6 +38,5 @@ public abstract class Media {
 		return "Media [title=" + title + ", dueDate=" + dueDate + "]";
 	}	
 
-
-
 }
+
