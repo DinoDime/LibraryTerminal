@@ -35,10 +35,12 @@ public class Midterm {
 			input.nextLine();
 			bookCheckOut();
 		} else if (choice == 3) {
-			System.out.println("What are you returning?");
-			String book = input.next();
-			boolean status = true;
-			returnBooks.bookReturn(book, status);
+			input.nextLine();
+			bookReturn();
+			//System.out.println("What are you returning?");
+			//String book = input.next();
+			//boolean status = true;
+			//returnBooks.bookReturn(book, status);
 		}
 }
 		
@@ -90,6 +92,10 @@ public class Midterm {
 					System.out.println("You have checked out " + book.toString());
 					book.setStatus(false);
 					dueDate();
+					truncateFile();
+					rewriteFile();
+					//System.out.println(readFile());
+					
 				} else {
 					System.out.println(book.toString() + " is checked out and therefore unavailable");
 
@@ -111,6 +117,53 @@ public class Midterm {
 
 		}
 
+//***************Return Book Method**************************************************	
+	public static void bookReturn() {
+		readFile();
+		System.out.println("What book would you like to return?");
+		String returnItem = input.nextLine().toLowerCase();
+
+		for (Book book : things) {
+			if (book.getTitle().toLowerCase().contains(returnItem)) {
+				if (book.getStatus() == true) {
+					System.out.println(book.toString() + "has already been returned");
+				} else {
+					book.setStatus(true);
+					truncateFile();
+					rewriteFile();
+					System.out.println("Thank you for returning " + book.toString());
+					}
+			}
+		}
+	}
+					
+					
+					//System.out.println(readFile());
+					
+//				} else {
+//					System.out.println(book.toString() + " is checked out and therefore unavailable");
+//
+//				}
+
+//			} else if (book.getAuthor().toLowerCase().contains(checkoutItem)) {
+//				if (book.getStatus() == true) {
+//					System.out.println(book.toString() + " is available");
+//					System.out.println("You have checked out " + book.toString());
+//					book.setStatus(false);
+//					dueDate();
+//				} else {
+//					System.out.println(book.toString() + " is checked out and therefore unavailable");
+//					
+//				}
+//
+//			}
+//		}
+//
+//		}
+
+	
+	
+	
 //***************Due Date Method**************************************************	
 		public static void dueDate() {
 			// get a calendar instance, which defaults to "now"
@@ -131,7 +184,7 @@ public class Midterm {
 		}
 		
 			
-//***************Erase Method**************************************************	
+//***************Truncate Method**************************************************	
 		public static void truncateFile() {
 			try {
 				FileChannel.open(Paths.get("BookList.txt"), StandardOpenOption.WRITE).truncate(0).close();
@@ -139,7 +192,7 @@ public class Midterm {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(readFile());
+			
 		}
 			
 //***************Write Method**************************************************	
@@ -147,7 +200,7 @@ public class Midterm {
 			try {
 		      FileWriter myWriter = new FileWriter("BookList.txt");
 		      for(Book rewriteList: things) {
-		    	  String jkadf = (rewriteList.getTitle() + "~" + rewriteList.getStatus() + "~" + rewriteList.getAuthor()+"\n");
+		    	  String jkadf = (rewriteList.getTitle() + "~" + rewriteList.getStatus() + "~" + rewriteList.getAuthor() + "\n");
 		      myWriter.write(jkadf);
 		      }
 		      myWriter.close();
