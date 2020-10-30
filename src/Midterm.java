@@ -22,8 +22,12 @@ public class Midterm {
 		int choice = input.nextInt();
 		if (choice == 1) {
 			System.out.println(readFile());
+			input.nextLine();
+			bookCheckOut();
 		} else if (choice == 2) {
 			searchFunction(things);
+			input.nextLine();
+			bookCheckOut();
 		} else if (choice == 3) {
 			System.out.println("What are you returning?");
 			String book = input.next();
@@ -56,16 +60,59 @@ public class Midterm {
 		readFile();
 		String searchId;
 		System.out.println("Type search word:");
-		searchId = (input.next());
+		input.nextLine();
+		searchId = (input.nextLine().toLowerCase());
 		searchId.toLowerCase();
 		for (Book book : bookslist) {
-			if (book.getTitle().toLowerCase().contains(searchId)) {
+			if (book.getTitle().toLowerCase().trim().contains(searchId.trim())) {
 				System.out.println(book.toString());
 			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
 				System.out.println(book.toString());
 			}
 		}
+	}
 
+//***************Checkout Book Method**************************************************	
+	public static void bookCheckOut() {
+		System.out.println("What book would you like to checkout?");
+		String checkoutItem = input.nextLine().toLowerCase();
+
+		for (Book book : things) {
+			if (book.getTitle().toLowerCase().contains(checkoutItem)) {
+				if (book.getStatus() == true) {
+					System.out
+							.println("This is the item you have selected: " + book.toString() + " and it is available");
+				} else {
+					System.out.println(
+							"This is the item you have selected: " + book.toString() + " and it is checked out");
+
+				}
+
+			} else if (book.getAuthor().toLowerCase().contains(checkoutItem)) {
+				if (book.getStatus() == true) {
+					System.out
+							.println("This is the item you have selected: " + book.toString() + " and it is available");
+				} else {
+					System.out.println(
+							"This is the item you have selected: " + book.toString() + " and it is checked out");
+
+				}
+
+			}
+
+		}
+			
+//			if (status == true) {
+//				System.out.println("Are you checking out " + book + " today?");
+//				String userResponse = JavaInput.nextLine();
+//				if (userResponse.contains("y")) {
+//					status = false;
+//					returnBooks.dueDate();
+//			}
+//			}
+		
+		
+		
 	}
 }
 
