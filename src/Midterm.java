@@ -5,9 +5,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
+import java.nio.*;
+import java.nio.channels.FileChannel;
+
 
 public class Midterm {
 	static List<Book> things = new ArrayList<>();
@@ -80,36 +86,73 @@ public class Midterm {
 		for (Book book : things) {
 			if (book.getTitle().toLowerCase().contains(checkoutItem)) {
 				if (book.getStatus() == true) {
-					System.out
-							.println("This is the item you have selected: " + book.toString() + " and it is available");
+					System.out.println(book.toString() + " is available");
+					System.out.println("You have checked out " + book.toString());
+					book.setStatus(false);
+					dueDate();
 				} else {
-					System.out.println(
-							"This is the item you have selected: " + book.toString() + " and it is checked out");
+					System.out.println(book.toString() + " is checked out and therefore unavailable");
 
 				}
 
 			} else if (book.getAuthor().toLowerCase().contains(checkoutItem)) {
 				if (book.getStatus() == true) {
-					System.out
-							.println("This is the item you have selected: " + book.toString() + " and it is available");
+					System.out.println(book.toString() + " is available");
+					System.out.println("You have checked out " + book.toString());
+					book.setStatus(false);
+					dueDate();
 				} else {
-					System.out.println(
-							"This is the item you have selected: " + book.toString() + " and it is checked out");
-
+					System.out.println(book.toString() + " is checked out and therefore unavailable");
+					
 				}
 
 			}
+		}
 
 		}
+
+//***************Due Date Method**************************************************	
+		public static void dueDate() {
+			// get a calendar instance, which defaults to "now"
+		    Calendar calendar = Calendar.getInstance();
+		    
+		    // get a date to represent "today"
+		    Date today = calendar.getTime();
+		    System.out.println("Today is " + today + ".");
+		 
+		    // add 14 days to the date/calendar
+		    calendar.add(Calendar.DAY_OF_YEAR, 14);
+		    
+		    // now get "due date"
+		    Date dueDate= calendar.getTime();
+
+		    // print out tomorrow's date
+		    System.out.println("Your due date is " + dueDate + ".");
+		}
+		{
 			
-//			if (status == true) {
-//				System.out.println("Are you checking out " + book + " today?");
-//				String userResponse = JavaInput.nextLine();
-//				if (userResponse.contains("y")) {
-//					status = false;
-//					returnBooks.dueDate();
-//			}
-//			}
+//***************Erase Method**************************************************	
+			try {
+				FileChannel.open(Paths.get("BookList.txt"), StandardOpenOption.WRITE).truncate(0).close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(readFile());
+			
+//***************Write Method**************************************************	
+		    try {
+		      FileWriter myWriter = new FileWriter("BookList.txt");
+		      for(Book rewriteList: things) {
+		    	  String jkadf = (rewriteList.getTitle() + "~" + rewriteList.getStatus() + "~" + rewriteList.getAuthor()+"\n");
+		      myWriter.write(jkadf);
+		      }
+		      myWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
 		
 		
 		

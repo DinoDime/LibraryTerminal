@@ -33,7 +33,7 @@ public class Movies extends Media{
 	@Override
 	public String toString() {
 		return "Movies [director=" + director + ", displayStatus()="
-				+ displayStatus() + ", getTitle()=" + getTitle() + ", getDueDate()=" + getDueDate() + ", toString()="
+				+ displayStatus() + ", getTitle()=" + getTitle() + ", getDueDate()=" +  ", toString()="
 				+ super.toString() + "]";
 	}
 	

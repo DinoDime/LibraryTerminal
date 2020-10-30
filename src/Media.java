@@ -34,7 +34,7 @@ public abstract class Media {
 
 	@Override
 	public String toString() {
-		return "Media [title=" + title + ", status=" + status + "]";
+		return (title + status);
 	}	
 
 }
