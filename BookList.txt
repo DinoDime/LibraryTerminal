@@ -9,4 +9,4 @@ The Book of M~true~Peng Sheperd
 Homegoing~true~Yaa Gyasi
 Sleeping Giants~true~Sylvian Neuvel
 The Sun and Her Flowers~true~Rupi Kaur
-Six Wakes~true~Mur Lafferty
+Six Wakes~false~Mur Lafferty

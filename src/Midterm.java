@@ -31,13 +31,16 @@ public class Midterm {
 				System.out.println(readFile());
 				input.nextLine();
 				bookCheckOut();
+				break;
 			} else if (choice == 2) {
 				searchFunction(things);
 				input.nextLine();
 				bookCheckOut();
+				break;
 			} else if (choice == 3) {
 				input.nextLine();
 				bookReturn();
+				break;
 				
 				//System.out.println("What are you returning?");
 				//String book = input.next();
