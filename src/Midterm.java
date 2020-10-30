@@ -129,9 +129,10 @@ public class Midterm {
 		    // print out tomorrow's date
 		    System.out.println("Your due date is " + dueDate + ".");
 		}
-		{
+		
 			
 //***************Erase Method**************************************************	
+		public static void truncateFile() {
 			try {
 				FileChannel.open(Paths.get("BookList.txt"), StandardOpenOption.WRITE).truncate(0).close();
 			} catch (IOException e) {
@@ -139,9 +140,11 @@ public class Midterm {
 				e.printStackTrace();
 			}
 			System.out.println(readFile());
+		}
 			
 //***************Write Method**************************************************	
-		    try {
+	public static void rewriteFile() {   
+			try {
 		      FileWriter myWriter = new FileWriter("BookList.txt");
 		      for(Book rewriteList: things) {
 		    	  String jkadf = (rewriteList.getTitle() + "~" + rewriteList.getStatus() + "~" + rewriteList.getAuthor()+"\n");
@@ -153,8 +156,7 @@ public class Midterm {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
 		    }
-		
-		
+	
 		
 	}
 }
