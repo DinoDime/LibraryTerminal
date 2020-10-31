@@ -184,7 +184,6 @@ public class Midterm {
 				myWriter.write(jkadf);
 			}
 			myWriter.close();
-			System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
