@@ -40,7 +40,16 @@ public class Midterm {
 				System.out.println(searchFunction(things,searchId));
 				break;
 			} else if (choice == 3) {
-				bookCheckOut();
+				readFile();
+				input.nextLine();
+				System.out.println("What book would you like to checkout?");
+				String checkoutItem = input.nextLine().toLowerCase();
+				boolean checkout = bookCheckOut(checkoutItem);
+				if (checkout == true) {
+					System.out.println("Thank you for checking out. Your book is due back by " + dueDate());
+				} else if (checkout == false) {
+					System.out.print("That book has already been checked out.");
+				}
 				break;
 			}
 			else if (choice == 4) {
@@ -102,43 +111,26 @@ public class Midterm {
 	}
 
 //***************Checkout Book Method**************************************************	
-	public static void bookCheckOut() {
-		int a = 0;
-		input.nextLine();
-		do {
-			try {
-				System.out.println("What book would you like to checkout?");
-				String checkoutItem = input.nextLine().toLowerCase();
-				if (checkoutItem.matches("[a-zA-Z]+")) {
-					for (Book book : things) {
-						if (book.getTitle().toLowerCase().contains(checkoutItem)
-								|| book.getAuthor().toLowerCase().contains(checkoutItem)) {
-							if (book.getStatus() == true) {
-								System.out.println(book.toString() + " is available");
-								System.out.println("You have checked out " + book.toString());
-								book.setStatus(false);
-								dueDate();
-								truncateFile();
-								rewriteFile();
-								a = 1;
-							} else {
-								System.out.println(book.toString() + " is checked out and therefore unavailable");
-							}
+	public static boolean bookCheckOut(String checkoutItem) {
+			boolean checkout = true;
+			for (Book book : things) {
+				if (book.getTitle().toLowerCase().contains(checkoutItem)) {
+					if (book.getStatus() == true) {
+						book.setStatus(false);
+						truncateFile();
+						rewriteFile();
+						return checkout;
+					} else {
+						checkout = false;
+						return checkout;
 						}
-					}
-				} else {
-					System.out.println("Please try again.");
-				}
-			} catch (InputMismatchException e) {
-				System.out.println("Please try again.");
-			}
-		} while (a == 0);
-	}
+				} 
+			} return checkout;
+		}
 
 //***************Return Book Method**************************************************	
 	public static boolean bookReturn(String returnItem) {
 		boolean returned = true;
-		//readFile();
 		for (Book book : things) {
 			if (book.getTitle().toLowerCase().contains(returnItem)) {
 				if (book.getStatus() == true) {
@@ -161,7 +153,7 @@ public class Midterm {
 
 		// get a date to represent "today"
 		Date today = calendar.getTime();
-		System.out.println("Today is " + today + ".");
+		//System.out.println("Today is " + today + ".");
 
 		// add 14 days to the date/calendar
 		calendar.add(Calendar.DAY_OF_YEAR, 14);
