@@ -34,10 +34,17 @@ public class Midterm {
 				break;
 			}
 			else if (choice == 4) {
+				readFile();
 				input.nextLine();
 				System.out.println("What book would you like to return?");
 				String returnItem = input.nextLine().toLowerCase();
-				bookReturn(returnItem);
+				boolean returned = bookReturn(returnItem);
+				if (returned == true) {
+					System.out.println("That book has already been returned.");
+				} else if (returned == false) {
+					System.out.print("Thank you for your return.");
+				}
+				
 				break;
 			}
 			else if (choice == 4) {
@@ -75,9 +82,8 @@ public class Midterm {
 
 //***************Search Method**************************************************	
 	public static String searchFunction(List<Book> bookslist, String searchId) {
-		
 		for (Book book : bookslist) {
-			if (book.getTitle().toLowerCase().trim().contains(searchId.trim()) || book.getAuthor().toLowerCase().contains(searchId)) {
+			if (book.getTitle().toLowerCase().trim().contains(searchId)) {
 				return book.toString();
 			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
 				return book.toString();
@@ -120,22 +126,22 @@ public class Midterm {
 	}
 
 //***************Return Book Method**************************************************	
-	public static String bookReturn(String returnItem) {
-		readFile();
+	public static boolean bookReturn(String returnItem) {
+		boolean returned = true;
+		//readFile();
 		for (Book book : things) {
 			if (book.getTitle().toLowerCase().contains(returnItem)) {
 				if (book.getStatus() == true) {
-					System.out.println(book.toString() + "has already been returned");
-					return book.toString();
+					return returned;
 				} else {
 					book.setStatus(true);
 					truncateFile();
 					rewriteFile();
-					System.out.println("Thank you for returning " + book.toString());
-					return book.toString();
+					returned = false;
+					return returned;
 					}
 			} 
-		} return returnItem;
+		} return returned;
 	}
 	
 //***************Due Date Method**************************************************	
