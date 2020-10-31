@@ -24,6 +24,7 @@ public class Midterm {
 				bookCheckOut();
 				break;
 			} else if (choice == 2) {
+				readFile();
 				System.out.println("Type search word:");
 				input.nextLine();
 				String searchId = (input.nextLine().toLowerCase());
@@ -72,9 +73,11 @@ public class Midterm {
 
 //***************Search Method**************************************************	
 	public static String searchFunction(List<Book> bookslist, String searchId) {
-		readFile();
+		
 		for (Book book : bookslist) {
-			if (book.getTitle().toLowerCase().trim().contains(searchId.trim())) {
+			if (book.getTitle().toLowerCase().trim().contains(searchId.trim()) || book.getAuthor().toLowerCase().contains(searchId)) {
+				System.out.println("	     Book Catalog");
+				System.out.println("========================================");
 				return book.toString();
 			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
 				return book.toString();
