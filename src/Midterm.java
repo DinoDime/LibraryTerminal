@@ -41,7 +41,9 @@ public class Midterm {
 				break;
 			} else if (choice == 3) {
 				input.nextLine();
-				bookReturn();
+				System.out.println("What book would you like to return?");
+				String returnItem = input.nextLine().toLowerCase();
+				bookReturn(returnItem);
 				break;
 			}
 			else if (choice == 4) {
@@ -128,52 +130,24 @@ public class Midterm {
 		}
 
 //***************Return Book Method**************************************************	
-	public static void bookReturn() {
+	public static String bookReturn(String returnItem) {
 		readFile();
-		System.out.println("What book would you like to return?");
-		String returnItem = input.nextLine().toLowerCase();
-
 		for (Book book : things) {
 			if (book.getTitle().toLowerCase().contains(returnItem)) {
 				if (book.getStatus() == true) {
 					System.out.println(book.toString() + "has already been returned");
+					return book.toString();
 				} else {
 					book.setStatus(true);
 					truncateFile();
 					rewriteFile();
 					System.out.println("Thank you for returning " + book.toString());
+					return book.toString();
 					}
-			}
-		}
+			} 
+		} return returnItem;
 	}
 					
-					
-					//System.out.println(readFile());
-					
-//				} else {
-//					System.out.println(book.toString() + " is checked out and therefore unavailable");
-//
-//				}
-
-//			} else if (book.getAuthor().toLowerCase().contains(checkoutItem)) {
-//				if (book.getStatus() == true) {
-//					System.out.println(book.toString() + " is available");
-//					System.out.println("You have checked out " + book.toString());
-//					book.setStatus(false);
-//					dueDate();
-//				} else {
-//					System.out.println(book.toString() + " is checked out and therefore unavailable");
-//					
-//				}
-//
-//			}
-//		}
-//
-//		}
-
-	
-	
-	
 //***************Due Date Method**************************************************	
 		public static void dueDate() {
 			// get a calendar instance, which defaults to "now"

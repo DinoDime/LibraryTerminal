@@ -6,7 +6,7 @@ Ninth House~true~Leigh Bardugo
 Such a Fun Age~true~Kiley Reid
 The Hate U Give~false~Angie Thomas
 The Book of M~true~Peng Sheperd
-Homegoing~false~Yaa Gyasi
+Homegoing~true~Yaa Gyasi
 Sleeping Giants~true~Sylvian Neuvel
 The Sun and Her Flowers~true~Rupi Kaur
 Six Wakes~false~Mur Lafferty
