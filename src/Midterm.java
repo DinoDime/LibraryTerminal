@@ -24,11 +24,11 @@ public class Midterm {
 	public static void main(String[] args) {
 		while(true) {
 		System.out.println("Welcome to the Library index");
-			System.out.println("What would you like to do?");
+			System.out.println("\nWhat would you like to do?");
 			System.out.println("1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Return a rental\n4)Quit");
 			int choice = input.nextInt();
 			if (choice == 1) {
-				System.out.println(readFile());
+				readFile();
 				input.nextLine();
 				bookCheckOut();
 				break;
@@ -62,18 +62,22 @@ public class Midterm {
 	public static List<Book> readFile() {
 		try {
 			List<String> lines = Files.readAllLines(filePath);
-
+			System.out.println("	     Book Catalog");
+			System.out.println("========================================");
 			for (String line : lines) {
 				String[] parts = line.split("~");
 				String title = parts[0];
 				boolean status = Boolean.parseBoolean(parts[1]);
 				String author = parts[2];
 				things.add(new Book(title, status, author));
+				System.out.printf("%-23s",title);
+				System.out.println(" by " + author);
 			}
+			System.out.println("========================================");
 			return things;
 		} catch (IOException e) {
 			System.out.println("Unable to read file.");
-			return new ArrayList<>();
+			return new ArrayList<Book>();
 		}
 	}
 
