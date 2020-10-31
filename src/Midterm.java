@@ -1,18 +1,8 @@
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.nio.file.*;
+import java.util.*;
 import java.io.*;
-import java.nio.*;
 import java.nio.channels.FileChannel;
 
 public class Midterm {
