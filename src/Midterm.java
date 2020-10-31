@@ -16,12 +16,10 @@ public class Midterm {
 			System.out.println("Welcome to the Library index");
 			System.out.println("\nWhat would you like to do?");
 			System.out.println(
-					"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Return a rental\n4)Quit");
+					"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Checkout a book\n4)Return a rental\n5)Quit");
 			int choice = input.nextInt();
 			if (choice == 1) {
 				readFile();
-				// input.nextLine();
-				bookCheckOut();
 				break;
 			} else if (choice == 2) {
 				readFile();
@@ -32,6 +30,10 @@ public class Midterm {
 				System.out.println(searchFunction(things,searchId));
 				break;
 			} else if (choice == 3) {
+				bookCheckOut();
+				break;
+			}
+			else if (choice == 4) {
 				input.nextLine();
 				System.out.println("What book would you like to return?");
 				String returnItem = input.nextLine().toLowerCase();
@@ -76,8 +78,6 @@ public class Midterm {
 		
 		for (Book book : bookslist) {
 			if (book.getTitle().toLowerCase().trim().contains(searchId.trim()) || book.getAuthor().toLowerCase().contains(searchId)) {
-				System.out.println("	     Book Catalog");
-				System.out.println("========================================");
 				return book.toString();
 			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
 				return book.toString();
@@ -139,7 +139,7 @@ public class Midterm {
 	}
 	
 //***************Due Date Method**************************************************	
-	public static void dueDate() {
+	public static Date dueDate() {
 		// get a calendar instance, which defaults to "now"
 		Calendar calendar = Calendar.getInstance();
 
@@ -153,8 +153,8 @@ public class Midterm {
 		// now get "due date"
 		Date dueDate = calendar.getTime();
 
-		// print out tomorrow's date
-		System.out.println("Your due date is " + dueDate + ".");
+		// return tomorrow's date
+		return dueDate;
 	}
 
 //***************Truncate Method**************************************************	
