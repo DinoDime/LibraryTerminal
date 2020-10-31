@@ -90,14 +90,14 @@ public class Midterm {
 	}
 
 //***************Search Method**************************************************	
-	public static String searchFunction(List<Book> bookslist, String searchId) {
+	public static String searchFunction(List<Book> bookslist, String searchId) {		
 		for (Book book : bookslist) {
-			if (book.getTitle().toLowerCase().trim().contains(searchId)) {
-				return book.toString();
-			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
+			if (book.getTitle().toLowerCase().contains(searchId) || book.getAuthor().toLowerCase().contains(searchId)) {
 				return book.toString();
 			}
-		} return searchId;
+		} 
+		System.out.print("Nothing found within search ");
+		return searchId;
 	}
 
 //***************Checkout Book Method**************************************************	
