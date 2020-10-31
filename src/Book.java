@@ -26,7 +26,7 @@ public class Book extends Media {
 
 	@Override
 	public String toString() {
-		return getTitle() + " by " + author + "\n";
+		return getTitle() + " by " + author;
 	}
 
 	@Override

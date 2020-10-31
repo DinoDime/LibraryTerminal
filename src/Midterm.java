@@ -33,19 +33,16 @@ public class Midterm {
 				bookCheckOut();
 				break;
 			} else if (choice == 2) {
-				searchFunction(things);
+				System.out.println("Type search word:");
 				input.nextLine();
-				bookCheckOut();
+				String searchId = (input.nextLine().toLowerCase());
+				searchId.toLowerCase();
+				System.out.println(searchFunction(things,searchId));
 				break;
 			} else if (choice == 3) {
 				input.nextLine();
 				bookReturn();
 				break;
-				
-				//System.out.println("What are you returning?");
-				//String book = input.next();
-				//boolean status = true;
-				//returnBooks.bookReturn(book, status);
 			}
 			else if (choice == 4) {
 				System.out.println("Goodbye");
@@ -82,20 +79,15 @@ public class Midterm {
 	}
 
 //***************Search Method**************************************************	
-	public static void searchFunction(List<Book> bookslist) {
+	public static String searchFunction(List<Book> bookslist, String searchId) {
 		readFile();
-		String searchId;
-		System.out.println("Type search word:");
-		input.nextLine();
-		searchId = (input.nextLine().toLowerCase());
-		searchId.toLowerCase();
 		for (Book book : bookslist) {
 			if (book.getTitle().toLowerCase().trim().contains(searchId.trim())) {
-				System.out.println(book.toString());
+				return book.toString();
 			} else if (book.getAuthor().toLowerCase().contains(searchId)) {
-				System.out.println(book.toString());
+				return book.toString();
 			}
-		}
+		} return searchId;
 	}
 
 //***************Checkout Book Method**************************************************	
