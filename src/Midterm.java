@@ -56,7 +56,7 @@ public class Midterm {
 				
 				break;
 			}
-			else if (choice == 4) {
+			else if (choice == 5) {
 				System.out.println("Goodbye");
 				break;
 			} else {
