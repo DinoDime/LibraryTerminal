@@ -50,10 +50,17 @@ public class Midterm {
 						if (checkout == true) {
 							System.out.println("Thank you for checking out "+ book.toString() + ". Your book is due back by " + dueDate() + ".");
 						} else if (checkout == false) {
+<<<<<<< HEAD
 							System.out.print(book.toString() + " has already been checked out.");
 						} else System.out.println("That book is not in our system");
 						break;
 					}
+=======
+							System.out.print(book.toString() + " has already been checked out");
+						} 
+					} else System.out.println("That book is not in our system");
+					break;
+>>>>>>> 244e7033fd2f337746030058a699c9e7561d4005
 				} 		
 				break;
 			}
@@ -68,10 +75,17 @@ public class Midterm {
 						if (returned == true) {
 							System.out.println(book.toString() + " has already been returned.");
 						} else if (returned == false) {
+<<<<<<< HEAD
 							System.out.print("Thank you for returning " + book.toString() + ".");
 						} else System.out.println("That must be your book. It does not belong to any libraries");
 						break;
 					}
+=======
+							System.out.print("Thank you for returning " + book.toString());
+						} 
+					} else System.out.println("That must be your book. It does not belong to any libraries");
+					break;
+>>>>>>> 244e7033fd2f337746030058a699c9e7561d4005
 				} 						
 				break;
 			}
