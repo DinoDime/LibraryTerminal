@@ -17,36 +17,6 @@ class MidtermTest {
 
 
 	@Test
-	void testCapitalizeAllUppercase() {
-		String expected = "java";
-		String actual = Midterm.toLowercase("JAVA");
-		assertEquals(expected, actual);
-	}
-	@Test
-	void testCapitalizeMixed() {
-		String expected = "java";
-		String actual = Midterm.toLowercase("Java");
-		assertEquals(expected, actual);
-	}
-	@Test
-	void testCapitalizeEmptyString() {
-		String expected = "";
-		String actual = Midterm.toLowercase("");
-		assertEquals(expected, actual);
-	}
-	@Test
-	void testCapitalizeNumbers() {
-		String expected = "789";
-		String actual = Midterm.toLowercase("789");
-		assertEquals(expected, actual);
-	}
-	@Test
-	void testCapitalizeNumbersMixed() {
-		String expected = "4tw";
-		String actual = Midterm.toLowercase("4TW");
-		assertEquals(expected, actual);
-	}
-	@Test
 	void testSearchFunctionTitle() {
 		String expected = "hello by world";
 		String actual = Midterm.searchFunction(books, "hello");
@@ -65,9 +35,15 @@ class MidtermTest {
 		assertEquals(expected, actual);
 	}
 	@Test
-	void testSearchFunctionNullInput() {
+	void testSearchFunctionIntInput() {
 		String expected = "Nothing found within search";
-		String actual = Midterm.searchFunction(books, "");
+		String actual = Midterm.searchFunction(books, "3425");
+		assertEquals(expected, actual);
+	}
+	@Test
+	void testSearchFunctionMixedInput() {
+		String expected = "Nothing found within search";
+		String actual = Midterm.searchFunction(books, "3T25fr");
 		assertEquals(expected, actual);
 	}
 
