@@ -51,9 +51,9 @@ public class Midterm {
 							System.out.println("Thank you for checking out "+ book.toString() + " Your book is due back by " + dueDate());
 						} else if (checkout == false) {
 							System.out.print(book.toString() + " has already been checked out");
-						} else System.out.println("That book is not in our system");
-						break;
-					}
+						} 
+					} else System.out.println("That book is not in our system");
+					break;
 				} 		
 				break;
 			}
@@ -69,9 +69,9 @@ public class Midterm {
 							System.out.println(book.toString() + " has already been returned");
 						} else if (returned == false) {
 							System.out.print("Thank you for returning " + book.toString());
-						} else System.out.println("That must be your book. It does not belong to any libraries");
-						break;
-					}
+						} 
+					} else System.out.println("That must be your book. It does not belong to any libraries");
+					break;
 				} 						
 				break;
 			}
