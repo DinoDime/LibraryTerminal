@@ -5,7 +5,7 @@ Dune~false~Frank Herbert
 Ninth House~false~Leigh Bardugo
 Such a Fun Age~false~Kiley Reid
 The Hate U Give~true~Angie Thomas
-The Book of M~true~Peng Sheperd
+The Book of M~false~Peng Sheperd
 Homegoing~false~Yaa Gyasi
 Sleeping Giants~true~Sylvian Neuvel
 The Sun and Her Flowers~false~Rupi Kaur
