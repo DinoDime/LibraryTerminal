@@ -1,11 +1,11 @@
 Real Life~true~Brandon Taylor
 Divergent~false~Veronica Roth
 Educated~false~Tara Westover
-Black Enough~true~Ibi Zoboi
+Dune~false~Frank Herbert
 Ninth House~false~Leigh Bardugo
 Such a Fun Age~false~Kiley Reid
-The Hate U Give~false~Angie Thomas
+The Hate U Give~true~Angie Thomas
 The Book of M~true~Peng Sheperd
-Homegoing~true~Yaa Gyasi
+Homegoing~false~Yaa Gyasi
 Sleeping Giants~true~Sylvian Neuvel
 The Sun and Her Flowers~false~Rupi Kaur

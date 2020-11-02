@@ -26,7 +26,7 @@ public class Midterm {
 			}
 			int choice = input.nextInt();
 			if (!(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5)) {
-				System.out.println("Invalid input. Please try again.");
+				System.out.println("Invalid input. Please try again");
 				continue;
 			}
 			else if (choice == 1) {
@@ -36,38 +36,43 @@ public class Midterm {
 				readFile();
 				System.out.println("Type search word:");
 				input.nextLine();
-				String searchId = toLowercase(input.nextLine());
+				String searchId = input.nextLine().toLowerCase();
 				System.out.println(searchFunction(things,searchId));
 				break;
 			} else if (choice == 3) {
 				readFile();
 				input.nextLine();
 				System.out.println("What book would you like to checkout?");
-				String checkoutItem = toLowercase(input.nextLine());
-				System.out.println(searchFunction(things, checkoutItem));
-				input.nextLine();
-				boolean checkout = bookCheckOut(checkoutItem);
-				if (checkout == true) {
-					System.out.println("Thank you for checking out. Your book is due back by " + dueDate());
-				} else if (checkout == false) {
-					System.out.print("That book has already been checked out.");
-				}
+				String checkoutItem = input.nextLine().toLowerCase();
+				for (Book book : things) {
+					if (book.getTitle().toLowerCase().contains(checkoutItem) || book.getAuthor().toLowerCase().contains(checkoutItem)) {
+						boolean checkout = bookCheckOut(checkoutItem);
+						if (checkout == true) {
+							System.out.println("Thank you for checking out "+ book.toString() + " Your book is due back by " + dueDate());
+						} else if (checkout == false) {
+							System.out.print(book.toString() + " has already been checked out");
+						} else System.out.println("That book is not in our system");
+						break;
+					}
+				} 		
 				break;
 			}
 			else if (choice == 4) {
 				readFile();
 				input.nextLine();
 				System.out.println("What book would you like to return?");
-				String returnItem = toLowercase(input.nextLine());
-				System.out.println(searchFunction(things, returnItem));
-				input.nextLine();
-				boolean returned = bookReturn(returnItem);
-				if (returned == true) {
-					System.out.println("That book has already been returned.");
-				} else if (returned == false) {
-					System.out.print("Thank you for your return.");
-				}
-				
+				String returnItem = input.nextLine().toLowerCase();
+				for (Book book : things) {
+					if (book.getTitle().toLowerCase().contains(returnItem) || book.getAuthor().toLowerCase().contains(returnItem)) {
+						boolean returned = bookReturn(returnItem);
+						if (returned == true) {
+							System.out.println(book.toString() + " has already been returned");
+						} else if (returned == false) {
+							System.out.print("Thank you for returning " + book.toString());
+						} else System.out.println("That must be your book. It does not belong to any libraries");
+						break;
+					}
+				} 						
 				break;
 			}
 			else if (choice == 5) {
@@ -76,11 +81,6 @@ public class Midterm {
 			} 
 			}
 		}
-//**************To Lowercase method***********************************
-	public static String toLowercase(String input) {
-		String inputLowercase = input.toLowerCase();
-		return inputLowercase;
-	}
 	
 //**************List Method*******************************************
 	public static List<Book> readFile() {
