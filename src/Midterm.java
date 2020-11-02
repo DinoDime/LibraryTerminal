@@ -18,7 +18,11 @@ public class Midterm {
 			System.out.println(
 					"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Checkout a book\n4)Return a rental\n5)Quit");
 			int choice = input.nextInt();
-			if (choice == 1) {
+			if (!(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5)) {
+				System.out.println("Invalid input. Please try again.");
+				continue;
+			}
+			else if (choice == 1) {
 				readFile();
 				break;
 			} else if (choice == 2) {
@@ -58,13 +62,9 @@ public class Midterm {
 			else if (choice == 5) {
 				System.out.println("Goodbye");
 				break;
-			} else {
-				System.out.println("Invalid entry. Please try again.");
-				continue;
+			} 
 			}
 		}
-	}
-
 //**************To Lowercase method***********************************
 	public static String toLowercase(String input) {
 		String inputLowercase = input.toLowerCase();
