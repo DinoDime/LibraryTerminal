@@ -17,6 +17,13 @@ public class Midterm {
 			System.out.println("\nWhat would you like to do?");
 			System.out.println(
 					"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Checkout a book\n4)Return a rental\n5)Quit");
+			while (!input.hasNextInt()) {
+				System.out.println("Invalid input. Try again.");
+				System.out.println("\nWhat would you like to do?");
+				System.out.println(
+						"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Checkout a book\n4)Return a rental\n5)Quit");
+				input.next();
+			}
 			int choice = input.nextInt();
 			if (!(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5)) {
 				System.out.println("Invalid input. Please try again.");
