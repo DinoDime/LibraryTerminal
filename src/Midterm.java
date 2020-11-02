@@ -52,7 +52,7 @@ public class Midterm {
 							System.out.print(book.toString() + " has already been checked out");
 						} 
 					} 
-				} System.out.println("That book is not in our system");	
+				} 	
 				System.out.println("Would you like to try again? (y/n)");
 				String tryAgain = input.nextLine();
 				if (tryAgain.contains("y")) {
@@ -77,7 +77,7 @@ public class Midterm {
 						} 
 						
 					}
-				} System.out.println("That must be your book. It does not belong to any libraries");	
+				} 	
 				System.out.println("Would you like to try again? (y/n)");
 				String tryAgain = input.nextLine();
 				if (tryAgain.contains("y")) {
