@@ -108,7 +108,7 @@ public class Midterm {
 				return book.toString();
 			}
 		} 
-		System.out.print("Nothing found within search ");
+		searchId = ("Nothing found within search");
 		return searchId;
 	}
 
