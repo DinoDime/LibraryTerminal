@@ -1,5 +1,5 @@
 
-import java.io.IOException;
+import java.io.IOExcept4ion;
 import java.nio.file.*;
 import java.util.*;
 import java.io.*;
@@ -48,9 +48,9 @@ public class Midterm {
 					if (book.getTitle().toLowerCase().contains(checkoutItem) || book.getAuthor().toLowerCase().contains(checkoutItem)) {
 						boolean checkout = bookCheckOut(checkoutItem);
 						if (checkout == true) {
-							System.out.println("Thank you for checking out "+ book.toString() + " Your book is due back by " + dueDate());
+							System.out.println("Thank you for checking out "+ book.toString() + ". Your book is due back by " + dueDate() + ".");
 						} else if (checkout == false) {
-							System.out.print(book.toString() + " has already been checked out");
+							System.out.print(book.toString() + " has already been checked out.");
 						} else System.out.println("That book is not in our system");
 						break;
 					}
@@ -66,9 +66,9 @@ public class Midterm {
 					if (book.getTitle().toLowerCase().contains(returnItem) || book.getAuthor().toLowerCase().contains(returnItem)) {
 						boolean returned = bookReturn(returnItem);
 						if (returned == true) {
-							System.out.println(book.toString() + " has already been returned");
+							System.out.println(book.toString() + " has already been returned.");
 						} else if (returned == false) {
-							System.out.print("Thank you for returning " + book.toString());
+							System.out.print("Thank you for returning " + book.toString() + ".");
 						} else System.out.println("That must be your book. It does not belong to any libraries");
 						break;
 					}
