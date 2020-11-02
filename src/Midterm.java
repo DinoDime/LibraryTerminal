@@ -100,6 +100,8 @@ public class Midterm {
 			List<String> lines = Files.readAllLines(filePath);
 			System.out.println("	     Book Catalog");
 			System.out.println("========================================");
+			LibraryApp.textArea.append("	     Book Catalog\n");
+			LibraryApp.textArea.append("========================================\n");
 			for (String line : lines) {
 				String[] parts = line.split("~");
 				String title = parts[0];
@@ -108,6 +110,8 @@ public class Midterm {
 				things.add(new Book(title, status, author));
 				System.out.printf("%-23s", title);
 				System.out.println(" by " + author);
+				LibraryApp.textArea.append(title + "     by " + author + "\n");
+				
 			}
 			System.out.println("========================================");
 			return things;
@@ -121,6 +125,7 @@ public class Midterm {
 	public static String searchFunction(List<Book> bookslist, String searchId) {		
 		for (Book book : bookslist) {
 			if (book.getTitle().toLowerCase().contains(searchId) || book.getAuthor().toLowerCase().contains(searchId)) {
+				LibraryApp.textArea.append(book.getTitle()+ "     by " + book.getAuthor()+ "\n");
 				return book.toString();
 			}
 		} 
