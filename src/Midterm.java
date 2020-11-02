@@ -35,15 +35,14 @@ public class Midterm {
 				readFile();
 				System.out.println("Type search word:");
 				input.nextLine();
-				String searchId = (input.nextLine().toLowerCase());
-				searchId.toLowerCase();
+				String searchId = toLowercase(input.nextLine());
 				System.out.println(searchFunction(things,searchId));
 				break;
 			} else if (choice == 3) {
 				readFile();
 				input.nextLine();
 				System.out.println("What book would you like to checkout?");
-				String checkoutItem = input.nextLine().toLowerCase();
+				String checkoutItem = toLowercase(input.nextLine());
 				boolean checkout = bookCheckOut(checkoutItem);
 				if (checkout == true) {
 					System.out.println("Thank you for checking out. Your book is due back by " + dueDate());
@@ -56,7 +55,7 @@ public class Midterm {
 				readFile();
 				input.nextLine();
 				System.out.println("What book would you like to return?");
-				String returnItem = input.nextLine().toLowerCase();
+				String returnItem = toLowercase(input.nextLine());
 				boolean returned = bookReturn(returnItem);
 				if (returned == true) {
 					System.out.println("That book has already been returned.");
@@ -76,6 +75,12 @@ public class Midterm {
 		}
 	}
 
+//**************To Lowercase method***********************************
+	public static String toLowercase(String input) {
+		String inputLowercase = input.toLowerCase();
+		return inputLowercase;
+	}
+	
 //**************List Method*******************************************
 	public static List<Book> readFile() {
 		try {
