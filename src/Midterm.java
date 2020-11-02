@@ -11,10 +11,9 @@ public class Midterm {
 	private static Path filePath = Paths.get("BookList.txt");
 
 	public static void main(String[] args) {
-		while (true) {
-			System.out.println("Welcome to the Library index");
-			System.out.println("\nWhat would you like to do?");
-			System.out.println(
+		System.out.println("Welcome to the Library index");
+		System.out.println("\nWhat would you like to do?");
+		System.out.println(
 					"1)List all books\n2)Search for a book by Title/Keyword or Author\n3)Checkout a book\n4)Return a rental\n5)Quit");
 			while (!input.hasNextInt()) {
 				System.out.println("Invalid input. Try again.");
@@ -25,19 +24,16 @@ public class Midterm {
 			}
 			int choice = input.nextInt();
 			if (!(choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5)) {
-				System.out.println("Invalid input. Please try again");
-				continue;
+				System.out.println("Invalid input.");
 			}
 			else if (choice == 1) {
 				readFile();
-				break;
 			} else if (choice == 2) {
 				readFile();
 				System.out.println("Type search word:");
 				input.nextLine();
 				String searchId = input.nextLine().toLowerCase();
 				System.out.println(searchFunction(things,searchId));
-				break;
 			} else if (choice == 3) {
 				readFile();
 				input.nextLine();
@@ -53,14 +49,6 @@ public class Midterm {
 						} 
 					} 
 				} 	
-				System.out.println("Would you like to try again? (y/n)");
-				String tryAgain = input.nextLine();
-				if (tryAgain.contains("y")) {
-					continue;
-				}
-				else {
-					break;
-				}
 				}
 			else if (choice == 4) {
 				readFile();
@@ -78,22 +66,11 @@ public class Midterm {
 						
 					}
 				} 	
-				System.out.println("Would you like to try again? (y/n)");
-				String tryAgain = input.nextLine();
-				if (tryAgain.contains("y")) {
-					continue;
 				}
-				else {
-					break;
-				}
-			}
 			else if (choice == 5) {
 				System.out.println("Goodbye");
-				break;
 			} 
 			}
-		}
-	
 //**************List Method*******************************************
 	public static List<Book> readFile() {
 		try {
