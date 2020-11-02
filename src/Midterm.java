@@ -59,6 +59,8 @@ public class Midterm {
 				input.nextLine();
 				System.out.println("What book would you like to return?");
 				String returnItem = toLowercase(input.nextLine());
+				System.out.println(searchFunction(things, returnItem));
+				input.nextLine();
 				boolean returned = bookReturn(returnItem);
 				if (returned == true) {
 					System.out.println("That book has already been returned.");
@@ -149,7 +151,6 @@ public class Midterm {
 			} 
 		} return returned;
 	}
-	
 //***************Due Date Method**************************************************	
 	public static Date dueDate() {
 		// get a calendar instance, which defaults to "now"
@@ -168,7 +169,6 @@ public class Midterm {
 		// return tomorrow's date
 		return dueDate;
 	}
-
 //***************Truncate Method**************************************************	
 	public static void truncateFile() {
 		try {
@@ -177,9 +177,7 @@ public class Midterm {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
-
 //***************Write Method**************************************************	
 	public static void rewriteFile() {
 		try {
@@ -194,6 +192,5 @@ public class Midterm {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
-
 	}
 }
