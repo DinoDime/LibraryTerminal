@@ -44,6 +44,8 @@ public class Midterm {
 				input.nextLine();
 				System.out.println("What book would you like to checkout?");
 				String checkoutItem = toLowercase(input.nextLine());
+				System.out.println(searchFunction(things, checkoutItem));
+				input.nextLine();
 				boolean checkout = bookCheckOut(checkoutItem);
 				if (checkout == true) {
 					System.out.println("Thank you for checking out. Your book is due back by " + dueDate());
